@@ -1,5 +1,13 @@
 <h2>Burgers - This is index.handlebars</h2>
 
+<h3>On the plate</h3>
+<ul>
+    {{#each burgers}}
+        <li>{{name}}</li>
+    {{/each}}
+</ul>
+
+<h3>Devoured</h3>
 <ul>
     {{#each burgers}}
         <li>{{name}}</li>
