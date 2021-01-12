@@ -9,6 +9,25 @@ router.get('/', (req,res) => {
             burgers: data,
         };
         res.render('index', hbsObject);
+        console.log("showing burgers")
+    });
+});
+
+router.post('/api/newBurger', (req,res) => {
+    burger.insertOne([req.body.name], (result) => {
+        res.json({ 
+            id: result.insertId
+        });
+        console.log(result)
+    });
+});
+
+router.post('/api/:name', (req,res) => {
+    burger.insertOne([req.params.name], (result) => {
+        res.json({ 
+            id: result.insertId
+        });
+        console.log(result)
     });
 });
 
