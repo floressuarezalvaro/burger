@@ -26,19 +26,15 @@ const orm = {
             cb(data);
         });
     },
-    updateOne(table, name, cb) {
+    updateOne(table, condition, cb) {
         let queryString = `Update ${table}`;
-        queryString += " (";
-        queryString += "name";
-        queryString += ") ";
-        queryString += "VALUES (";
-        queryString += "'";
-        queryString += vals;
-        queryString += "'";
-        queryString += ") ";
+        queryString += ' SET ';
+        queryString += 'devoured = true';
+        queryString += ' WHERE ';
+        queryString += condition;
 
         console.log(queryString)
-        connection.query(queryString, vals, (err, data) => {
+        connection.query(queryString, (err, data) => {
             if (err) throw err;
             cb(data);
         });

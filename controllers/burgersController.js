@@ -22,10 +22,18 @@ router.post('/api/newBurger', (req,res) => {
     });
 });
 
-router.post('/api/:name', (req,res) => {
-    burger.insertOne([req.params.name], (result) => {
+router.put('/api/burgers/:id', (req,res) => {
+    const condition = `id = ${req.params.id}`;
+    console.log('condition', condition)
+
+    burger.updateOne(
+        condition,
+        (result) => {
+        if (result.changedRows === 0) {
+            return res.status(404).end();
+        }
         res.json({ 
-            id: result.insertId
+            message: result.message
         });
         console.log(result)
     });
