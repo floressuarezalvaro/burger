@@ -1,19 +1,42 @@
-<h3>Welcome to my new hamburger joint</h3>
-
-<p>On the plate</p>
-<ul>
-    {{#each burgers}}
-    {{#unless devoured}}
-        <li>{{name}}</li>
-    {{/unless}}
-    {{/each}}
+<p>If you have items in your plate, click the buttons to eat up. If not, go ahead and place an order!</p>
+<div class="container">
+    <p>On the plate</p>
+    <ul>
+        {{#each burgers}}
+        {{#unless devoured}}
+            <li>
+                {{name}}
+                <button class="btn btn-outline-success devourButton" data-id="{{id}}">
+                {{#if devoured}}Eat Me{{/if}}
+                </button>
+            </li>
+        {{/unless}}
+        {{/each}}
 </ul>
+</div>
 
-<p>Devoured</p>
-<ul>
-    {{#each burgers}}
-    {{#if devoured}}
-        <li>{{name}}</li>
-    {{/if}}
-    {{/each}}
-</ul>
+
+<div class="container">
+    <p>Devoured</p>
+    <ul>
+        {{#each burgers}}
+        {{#if devoured}}
+            <li>{{name}}</li>
+        {{/if}}
+        {{/each}}
+    </ul>
+</div>
+
+<div class="card-body">
+    <form id="form">
+    <div class="form-group">
+        <input
+        type="input"
+        class="form-control"
+        id="placeOrder"
+        placeholder="example: Whopper"
+        />
+    </div>
+    <button type="submit" class="btn btn-info">Add</button>
+    </form>
+</div>
