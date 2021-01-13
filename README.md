@@ -7,7 +7,7 @@ This repository provides the landing page for my burger app. This burger app all
 
 Due to limited time, I wasn't able to create a visually pleasing app, instead I've chosen a cheddar-cheese colored background. I do plan to update this to be more aesthetically pleasing in the near future, however, this time around I was focused purely on functionality. 
 
-Please click the link here to access my [repository](https://github.com/floressuarezalvaro/burger). I've also uploaded my app on Heroku at https://alvaro-burgers.herokuapp.com/.  Below is a video of how my team generator works. 
+Please click the link here to access my [repository](https://github.com/floressuarezalvaro/burger). I've also uploaded my app on Heroku at https://alvaro-burgers.herokuapp.com/.  Below is a video of how my app works. 
 
 ![Recording](./public/assets/gif/burgers.gif)
 
