@@ -26,4 +26,25 @@ document.addEventListener('DOMContentLoaded', (event) => {
         })
     }
 
+    const sForm = document.getElementById("submitForm");
+
+    if(sForm) {
+        sForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+            const name = document.getElementById("placeOrder").value.trim();
+            const newBurgerName =  {
+                name: name,
+            };
+            fetch("/api/newBurger", {
+                method: "POST",
+                headers: {
+                Accept: "application/json",
+                "Content-Type": "application/json",
+                },
+                body: JSON.stringify(newBurgerName),
+            }).then(() => {
+                location.reload();
+            });
+        })
+    }
 })
